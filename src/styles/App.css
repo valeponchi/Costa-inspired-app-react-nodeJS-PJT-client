@@ -1,0 +1,158 @@
+.App {
+	height: 100vh;
+}
+
+html {
+	--primary: #6f263d;
+	--primary-transparent: #6f263d1c;
+
+	--primary-rgb: rgb(109, 31, 55);
+}
+
+body {
+	background-color: rgb(255, 255, 255);
+	background-image: url(../images/app-background.svg);
+	background-size: 94px 94px;
+	background-repeat: repeat;
+}
+
+main,
+footer {
+	padding: 40px 80px;
+}
+
+li {
+	list-style-type: none;
+	text-align: center;
+}
+
+h2 {
+	font-size: 2rem;
+}
+
+a {
+	text-decoration: none;
+	color: white;
+}
+
+a:hover {
+	color: var(--primary);
+}
+
+.top-bar {
+	height: 384px;
+	width: 100%;
+	background-image: url(https://www.costa.co.uk/static/all-menu-hero-image-34573cf8b49b15630eeec1893575ac8b.jpg);
+	/* background-image: url(https://images.ctfassets.net/royi30b2qd26/EnlYGQXwxGcjuCCqitMXw/659ad13123b6249a74431ca644e022cd/behind-the-beans-landing-1600x464.jpg?w=1600&q=100); */
+	background-size: cover;
+	background-position: center center;
+}
+
+.logo {
+	width: 200px;
+	padding: 5px;
+}
+
+.header_nav {
+	margin-left: 1rem;
+}
+
+.header__nav li {
+	display: inline-block;
+	margin-left: 0;
+	padding: 0.5rem;
+	font-size: 1.5rem;
+	font-weight: 600;
+}
+
+.link-no-white {
+	color: var(--primary);
+	margin-left: auto;
+}
+
+.link-no-white:hover {
+	color: #6f263dc7;
+}
+
+/* sections style  */
+.section__style {
+	/* border-top: 0.5px solid rgba(255, 255, 255, 0.432); */
+	padding: 5px;
+	margin-bottom: 10px;
+}
+
+.list__section {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, 350px);
+	place-content: center;
+	gap: 80px;
+}
+
+footer {
+	display: grid;
+	place-content: center;
+}
+
+footer div {
+	display: inline;
+}
+
+.footer-font-size {
+	font-size: 0.8rem;
+}
+
+.inline {
+	display: grid;
+	grid-auto-flow: column;
+	place-items: center;
+	margin-top: 20px;
+}
+
+/* .cart {
+	height: 60vh;
+	padding: 1rem;
+
+	display: grid;
+	grid-template-rows: auto 1fr auto;
+	grid-gap: 1rem;
+	justify-content: center;
+
+	border-top: 2px solid #00675b;
+} */
+
+.center {
+	display: grid;
+	place-items: center;
+}
+
+.quantity-btn {
+	width: 25px;
+	height: 25px;
+	/* padding: 5px 5px; */
+
+	border-radius: 0.25rem;
+
+	font-weight: bold;
+}
+
+.quantity-btn:hover {
+	color: rgb(168, 21, 65);
+}
+
+.remove-btn {
+	border: 2px solid;
+	background-color: white;
+}
+
+.add-btn {
+	border: 2px solid;
+	background-color: white;
+}
+
+.space {
+	margin: 0px 40px;
+}
+
+.space-down {
+	margin-bottom: 20px;
+}

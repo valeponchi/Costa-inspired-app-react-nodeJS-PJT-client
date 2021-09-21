@@ -1,0 +1,30 @@
+import { useEffect } from 'react'
+import useStore from '../store'
+import Item from './Item'
+
+function Snacks() {
+	//import coffees from store
+	const snacks = useStore(store => store.snacks)
+	//import fetchCoffee from store
+	const fetchSnacks = useStore(store => store.fetchSnacks)
+
+	useEffect(() => {
+		fetchSnacks()
+		console.log('I am fetching snacks..')
+	}, [])
+
+	console.log('snacks in snacksPage: ', snacks)
+
+	return (
+		<section className="section__style trending-now">
+			<h2> Coming soon.. </h2>
+			<ul className="list__section">
+				{snacks.map(item => (
+					<Item item={item} />
+				))}
+			</ul>
+		</section>
+	)
+}
+
+export default Snacks

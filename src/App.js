@@ -1,25 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import './styles/App.css'
+import { Route, Switch } from 'react-router-dom'
+import Footer from './components/Footer'
+import Header from './components/Header'
+import Home from './pages/Home'
+import Coffee from './components/Coffee'
+import Food from './components/Food'
+import Frostino from './components/Frostino'
+import Pastries from './components/Pastries'
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+		<div className="App">
+			<Header />
+
+			<Switch>
+				<Route path="/" exact>
+					<Home />
+				</Route>
+				<Route path="/coffee" exact>
+					<Coffee />
+				</Route>
+				<Route path="/food" exact>
+					<Food />
+				</Route>
+				<Route path="/pastries" exact>
+					<Pastries />
+				</Route>
+				<Route path="/frostino" exact>
+					<Frostino />
+				</Route>
+			</Switch>
+
+			<Footer />
+		</div>
+	)
 }
 
-export default App;
+export default App
