@@ -135,7 +135,8 @@ footer div {
 	font-weight: bold;
 }
 
-.quantity-btn:hover {
+.quantity-btn:hover,
+.checkout-btn:hover {
 	color: rgb(168, 21, 65);
 }
 
@@ -149,10 +150,51 @@ footer div {
 	background-color: white;
 }
 
+.checkout-btn {
+	border: 2px solid;
+	background-color: white;
+	padding: 5px;
+	border-radius: 10px;
+	font-weight: 600;
+}
+
 .space {
 	margin: 0px 40px;
 }
 
 .space-down {
 	margin-bottom: 20px;
+}
+
+.row {
+	display: grid;
+	grid-auto-flow: column;
+	gap: 20px;
+
+	justify-content: space-between;
+}
+
+.row.center {
+	/* align items vertically */
+	align-items: center;
+}
+
+.columns {
+	display: grid;
+	grid-auto-flow: column;
+	gap: 5px;
+}
+
+.block {
+	display: grid;
+	place-content: center;
+	gap: 10px;
+	/* background-color: #e0e0e093; */
+	padding: 1rem;
+	margin: 0.5rem;
+	border-radius: 0.5rem;
+}
+
+.text-right {
+	text-align: right;
 }

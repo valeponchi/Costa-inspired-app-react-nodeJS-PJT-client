@@ -7,6 +7,7 @@ import Coffee from './components/Coffee'
 import Food from './components/Food'
 import Frostino from './components/Frostino'
 import Pastries from './components/Pastries'
+import Basket from './pages/Basket'
 
 function App() {
 	return (
@@ -28,6 +29,9 @@ function App() {
 				</Route>
 				<Route path="/frostino" exact>
 					<Frostino />
+				</Route>
+				<Route path="/cart">
+					<Basket />
 				</Route>
 			</Switch>
 
