@@ -6,6 +6,9 @@ const placeholder = '../public/assets/costa-coffee-logo.svg'
 function Item({ item, key }) {
 	const addItemBasket = useStore(store => store.addItemBasket)
 	const removeItemBasket = useStore(store => store.removeItemBasket)
+	const basketItems = useStore(store => store.basketItems)
+
+	const exist = basketItems.find(basketItem => basketItem.id === item.id)
 
 	const name = item.name
 	return (
@@ -24,7 +27,7 @@ function Item({ item, key }) {
 					onClick={() => removeItemBasket(item)}>
 					-
 				</button>
-				<p>£{item.price.toFixed(2)}</p>
+				<p>{exist ? exist.qnt : 0}</p>
 				<button
 					className="quantity-btn center add-btn"
 					onClick={() => addItemBasket(item)}>

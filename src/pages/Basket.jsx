@@ -13,7 +13,7 @@ function Basket() {
 	// const shippingPrice = itemsPrice > 2000 ? 0 : 5
 	const totalPrice = itemsPrice
 	return (
-		<main className="block">
+		<section className="block">
 			<h2>Cart Items</h2>
 			<div>
 				{/* when cart item is 0 render this <div> */}
@@ -74,7 +74,7 @@ function Basket() {
 					</div>
 				</>
 			)}
-		</main>
+		</section>
 	)
 }
 

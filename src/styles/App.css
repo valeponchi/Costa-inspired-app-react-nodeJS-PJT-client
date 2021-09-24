@@ -1,5 +1,6 @@
 .App {
 	height: 100vh;
+	display: grid;
 }
 
 html {
@@ -15,9 +16,23 @@ body {
 	background-size: 94px 94px;
 	background-repeat: repeat;
 }
+/* .wrapper {
+	grid-template:
+		'main basket' auto/
+		auto auto;
+}
+
+main {
+	grid-area: main;
+}
+
+.basket {
+	grid-area: basket;
+} */
 
 main,
-footer {
+footer,
+section {
 	padding: 40px 80px;
 }
 

@@ -17,7 +17,9 @@ function Snacks() {
 
 	return (
 		<section className="section__style trending-now">
-			<h2> Coming soon.. </h2>
+			<h2> Snacks </h2>
+
+			<small> Coming soon.. </small>
 			<ul className="list__section">
 				{snacks.map(item => (
 					<Item item={item} />
