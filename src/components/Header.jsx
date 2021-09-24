@@ -3,7 +3,7 @@ import styled from 'styled-components'
 // import useStore from '../store'
 
 function Header() {
-	let History = useHistory()
+	// let History = useHistory()
 
 	const Title = styled.h1`
 		margin: 10px;

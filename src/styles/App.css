@@ -36,9 +36,13 @@ section {
 	padding: 40px 80px;
 }
 
+/* ul {
+	display: grid;
+	grid-auto-flow: column;
+} */
+
 li {
 	list-style-type: none;
-	text-align: center;
 }
 
 h2 {
@@ -72,12 +76,22 @@ a:hover {
 	margin-left: 1rem;
 }
 
+.header__nav ul {
+	display: grid;
+	grid-auto-flow: column;
+}
+
 .header__nav li {
+	list-style-type: none;
+
 	display: inline-block;
 	margin-left: 0;
-	padding: 0.5rem;
-	font-size: 1.5rem;
+	margin-right: 30px;
+	margin-bottom: 20px;
+	/* padding: 0.7rem; */
+	font-size: 1.7rem;
 	font-weight: 600;
+	align-items: center;
 }
 
 .link-no-white {
@@ -166,11 +180,12 @@ footer div {
 }
 
 .checkout-btn {
-	border: 2px solid;
+	border: 3px solid;
 	background-color: white;
 	padding: 5px;
-	border-radius: 10px;
+	border-radius: 15px;
 	font-weight: 600;
+	font-size: 1rem;
 }
 
 .space {
@@ -198,10 +213,16 @@ footer div {
 	display: grid;
 	grid-auto-flow: column;
 	gap: 5px;
+	font-size: 1.3rem;
+}
+
+strong {
+	font-size: 1.5rem;
 }
 
 .block {
 	display: grid;
+	/* grid-auto-flow: column; */
 	place-content: center;
 	gap: 10px;
 	/* background-color: #e0e0e093; */

@@ -23,15 +23,18 @@ function Basket() {
 				<div key={item.id} className="row">
 					<div className="columns">
 						<button
-							onClick={() => onAdd(item)}
-							className="quantity-btn center add-btn">
-							+
-						</button>
-						<div className="columns">{item.name}</div>
-						<button
 							onClick={() => onRemove(item)}
 							className="quantity-btn center remove-btn">
 							-
+						</button>
+
+						<div className="columns">
+							{item.name.charAt(0).toUpperCase() + item.name.slice(1)}
+						</div>
+						<button
+							onClick={() => onAdd(item)}
+							className="quantity-btn center add-btn">
+							+
 						</button>
 					</div>
 					<div className="columns text-right">
