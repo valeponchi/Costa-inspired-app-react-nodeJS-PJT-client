@@ -11,7 +11,7 @@ function Frostino() {
 	useEffect(() => {
 		fetchFrostino()
 		console.log('I am fetching frostino..')
-	}, [])
+	}, [fetchFrostino])
 
 	console.log('frostino in frostinoPage: ', frostino)
 
@@ -21,7 +21,7 @@ function Frostino() {
 				<h2>Frostino</h2>
 				<ul className="list__section">
 					{frostino.map(item => (
-						<Item item={item} />
+						<Item item={item} key={item.id} />
 					))}
 				</ul>
 			</main>

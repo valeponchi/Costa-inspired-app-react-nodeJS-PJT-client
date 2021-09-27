@@ -1,16 +1,28 @@
-import { Link, useHistory } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import styled from 'styled-components'
+import useStore from '../store'
 // import useStore from '../store'
 
-function Header() {
-	// let History = useHistory()
+const Title = styled.h1`
+	margin: 10px;
+	color: white;
+	font-size: 3rem;
+	line-height: 100%;
+`
 
-	const Title = styled.h1`
-		margin: 10px;
-		color: white;
-		font-size: 3rem;
-		line-height: 100%;
-	`
+function Header() {
+	const basketItems = useStore(store => store.basketItems)
+
+	const arrayWithQnt = basketItems.map(item => item.qnt)
+	console.log(`arrayWithQnt:`, arrayWithQnt)
+
+	const quantityInCart = arrayWithQnt.reduce(
+		(accumulator, currentItem) => accumulator + currentItem,
+		0
+	)
+
+	console.log(`quantityInCart:`, quantityInCart)
+
 	return (
 		<header className="top-bar">
 			<main>
@@ -51,14 +63,14 @@ function Header() {
 						</li>
 						<li key={5}>
 							<Link className="login_register" to="/cart">
-								Cart
+								Cart <button className="badge">{quantityInCart}</button>
 							</Link>{' '}
 						</li>
-						<li>
-							{/* <form onSubmit={handleSubmit}>
+						{/* <li> */}
+						{/* <form onSubmit={handleSubmit}>
 							<input type="text" name="search" placeholder="Search..."></input>
 						</form> */}
-						</li>
+						{/* </li> */}
 					</ul>
 				</nav>
 				<Title>

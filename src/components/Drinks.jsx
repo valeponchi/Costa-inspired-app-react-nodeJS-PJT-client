@@ -11,7 +11,7 @@ function Drinks() {
 	useEffect(() => {
 		fetchDrinks()
 		console.log('I am fetching drink..')
-	}, [])
+	}, [fetchDrinks])
 
 	console.log('drink in drinkPage: ', drink)
 

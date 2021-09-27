@@ -104,8 +104,15 @@ const useStore = create(
 			}
 		},
 
-		// totalInCart: '',
-		// setTotalInCart = get().basketItems.reduce(
+		totalToPay: 0,
+		// setTotalToPay: ({
+		// 	totalToPay: get().basketItems.reduce(
+		// 			(accumulator, currentItem) =>
+		// 				accumulator + currentItem.price * currentItem.qnt,
+		// 			0
+		// 		),
+		// })
+		// setTotalToPay: get().basketItems.reduce(
 		// 	(accumulator, currentItem) =>
 		// 		accumulator + currentItem.price * currentItem.qnt,
 		// 	0

@@ -4,7 +4,6 @@ import Food from '../components/Food'
 import Frostino from '../components/Frostino'
 import Pastries from '../components/Pastries'
 import Snacks from '../components/Snacks'
-import Basket from './Basket'
 
 function Home() {
 	return (

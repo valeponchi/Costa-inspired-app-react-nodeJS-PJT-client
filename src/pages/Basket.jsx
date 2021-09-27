@@ -1,17 +1,21 @@
-import React from 'react'
+import React, { useState } from 'react'
 import useStore from '../store'
 function Basket() {
 	const onAdd = useStore(store => store.addItemBasket)
 	const onRemove = useStore(store => store.removeItemBasket)
 	const basketItems = useStore(store => store.basketItems)
+	const totalToPay = useStore(store => store.totalToPay)
+
+	const [checkoutClicked, seCheckoutclicked] = useState(false)
+
 	const itemsPrice = basketItems.reduce(
 		(accumulator, currentItem) =>
 			accumulator + currentItem.price * currentItem.qnt,
 		0
 	)
-	// const taxPrice = itemsPrice * 0.14
-	// const shippingPrice = itemsPrice > 2000 ? 0 : 5
+
 	const totalPrice = itemsPrice
+
 	return (
 		<section className="block">
 			<h2>Cart Items</h2>
@@ -42,7 +46,7 @@ function Basket() {
 					</div>
 				</div>
 			))}
-			{basketItems.length != 0 && (
+			{basketItems.length !== 0 && (
 				<>
 					<hr></hr>
 					{/* <div className="row">
@@ -71,9 +75,10 @@ function Basket() {
 					<div className="row">
 						<button
 							className="checkout-btn"
-							onClick={() => alert('Implement Checkout')}>
+							onClick={() => seCheckoutclicked(!checkoutClicked)}>
 							Checkout
 						</button>
+						{checkoutClicked ? <h1>Hello</h1> : ''}
 					</div>
 				</>
 			)}

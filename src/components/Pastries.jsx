@@ -11,7 +11,7 @@ function Pastries() {
 	useEffect(() => {
 		fetchPastries()
 		console.log('I am fetching pastries..')
-	}, [])
+	}, [fetchPastries])
 
 	console.log('pastries in pastriesPage: ', pastries)
 

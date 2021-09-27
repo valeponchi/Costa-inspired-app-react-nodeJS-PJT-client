@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import useStore from '../store'
 
 const placeholder = '../public/assets/costa-coffee-logo.svg'
@@ -12,7 +11,7 @@ function Item({ item, key }) {
 
 	const name = item.name
 	return (
-		<li key={key}>
+		<li key={item.id}>
 			<img
 				className="image"
 				src={item.imageUrl ? item.imageUrl : placeholder}
@@ -24,7 +23,7 @@ function Item({ item, key }) {
 				<div className="space"></div>
 				<button
 					className="quantity-btn center remove-btn"
-					onClick={() => removeItemBasket(item)}>
+					onClick={() => (exist ? removeItemBasket(item) : null)}>
 					-
 				</button>
 				<p>{exist ? exist.qnt : 0}</p>

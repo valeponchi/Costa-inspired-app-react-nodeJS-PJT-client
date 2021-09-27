@@ -11,7 +11,7 @@ function Coffee() {
 	useEffect(() => {
 		fetchCoffees()
 		console.log('I am fetching coffees..')
-	}, [])
+	}, [fetchCoffees])
 
 	console.log('coffees in CoffeePage: ', coffees)
 
@@ -21,7 +21,7 @@ function Coffee() {
 				<h2>Coffee</h2>
 				<ul className="list__section">
 					{coffees.map(item => (
-						<Item item={item} />
+						<Item item={item} key={item.id} />
 					))}
 				</ul>
 			</main>

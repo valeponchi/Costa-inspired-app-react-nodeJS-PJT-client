@@ -11,7 +11,7 @@ function Food() {
 	useEffect(() => {
 		fetchFood()
 		console.log('I am fetching food..')
-	}, [])
+	}, [fetchFood])
 
 	console.log('Food in FoodPage: ', food)
 
@@ -21,7 +21,7 @@ function Food() {
 				<h2>Food</h2>
 				<ul className="list__section">
 					{food.map(item => (
-						<Item item={item} />
+						<Item item={item} key={item.id} />
 					))}
 				</ul>
 			</main>
