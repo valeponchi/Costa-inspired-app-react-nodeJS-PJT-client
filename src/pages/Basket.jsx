@@ -1,6 +1,9 @@
 import React, { useState } from 'react'
 import { useHistory } from 'react-router'
 import useStore from '../store'
+
+const placeholder = '../public/assets/costa-coffee-logo.svg'
+
 function Basket() {
 	const onAdd = useStore(store => store.addItemBasket)
 	const onRemove = useStore(store => store.removeItemBasket)
@@ -41,6 +44,13 @@ function Basket() {
 						</button>
 
 						<div className="columns">
+							{
+								<img
+									className="image smallImage"
+									src={item.imageUrl ? item.imageUrl : placeholder}
+									alt={item.name}
+								/>
+							}
 							{item.name.charAt(0).toUpperCase() + item.name.slice(1)}
 						</div>
 						<button
