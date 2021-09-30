@@ -24,7 +24,7 @@ function Header() {
 	console.log(`quantityInCart:`, quantityInCart)
 
 	return (
-		<header className="top-bar">
+		<header id="top-of-the-page" className="top-bar">
 			<main>
 				<nav className="header__nav">
 					<ul>
@@ -57,7 +57,7 @@ function Header() {
 							</Link>{' '}
 						</li>
 						<li key={7}>
-							<Link className="login_register" to="/register">
+							<Link className="login_register" to="/signup">
 								Register
 							</Link>{' '}
 						</li>

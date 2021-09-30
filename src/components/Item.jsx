@@ -17,8 +17,11 @@ function Item({ item, key }) {
 				src={item.imageUrl ? item.imageUrl : placeholder}
 				alt={item.name}
 			/>
-			<h3 className="space-down">{name.toUpperCase()}</h3>
-			<p>{item.description}</p>
+			<span className="center">
+				<h3 className="space-down">{name.toUpperCase()}</h3>£
+				{item.price.toFixed(2)}
+			</span>
+			<p className="center">{item.description}</p>
 			<div className="inline">
 				<div className="space"></div>
 				<button

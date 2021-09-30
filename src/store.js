@@ -104,6 +104,8 @@ const useStore = create(
 			}
 		},
 
+		removeAllBasketItems: () => set({ basketItems: [] }),
+
 		totalToPay: 0,
 		// setTotalToPay: ({
 		// 	totalToPay: get().basketItems.reduce(

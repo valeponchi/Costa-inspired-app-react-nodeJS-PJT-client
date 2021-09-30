@@ -15,6 +15,9 @@ function Home() {
 				<Pastries />
 				<Drinks />
 				<Snacks />
+				{/* <a class="back-to-top-link" href="#top-of-the-page">
+					Back to top
+				</a> */}
 			</main>
 			{/* <Basket className="" /> */}
 		</>

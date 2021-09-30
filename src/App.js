@@ -8,6 +8,9 @@ import Food from './components/Food'
 import Frostino from './components/Frostino'
 import Pastries from './components/Pastries'
 import Basket from './pages/Basket'
+import Login from './pages/Login'
+import Signup from './pages/Signup'
+import PaymentReceived from './pages/PaymentReceived'
 
 function App() {
 	return (
@@ -33,8 +36,19 @@ function App() {
 				<Route path="/cart">
 					<Basket />
 				</Route>
+				<Route path="/login">
+					<Login />
+				</Route>
+				<Route path="/signup">
+					<Signup />
+				</Route>
+				<Route path="/paymentReceived">
+					<PaymentReceived />
+				</Route>
 			</Switch>
-
+			<a class="back-to-top-link" href="#top-of-the-page">
+				Back to top
+			</a>
 			<Footer />
 		</div>
 	)

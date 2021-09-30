@@ -1,12 +1,20 @@
 import React, { useState } from 'react'
+import { useHistory } from 'react-router'
 import useStore from '../store'
 function Basket() {
 	const onAdd = useStore(store => store.addItemBasket)
 	const onRemove = useStore(store => store.removeItemBasket)
 	const basketItems = useStore(store => store.basketItems)
+	const removeAllBasketItems = useStore(store => store.removeAllBasketItems)
+
 	const totalToPay = useStore(store => store.totalToPay)
 
-	const [checkoutClicked, seCheckoutclicked] = useState(false)
+	const [checkoutClicked, setCheckoutClicked] = useState(false)
+	const [asGuestClicked, setAsGuestClicked] = useState(false)
+	const [loginClicked, setLoginClicked] = useState(false)
+	const [registerClicked, setRegisterClicked] = useState(false)
+
+	const history = useHistory()
 
 	const itemsPrice = basketItems.reduce(
 		(accumulator, currentItem) =>
@@ -49,20 +57,6 @@ function Basket() {
 			{basketItems.length !== 0 && (
 				<>
 					<hr></hr>
-					{/* <div className="row">
-						<div className="columns">Item Price</div>
-						<div className="column-1 text-right">£{itemsPrice.toFixed(2)}</div>
-					</div> */}
-					{/* <div className="row">
-						<div className="columns">Tax Price</div>
-						<div className="column-1 text-right">£{taxPrice.toFixed(2)}</div>
-					</div>
-					<div className="row">
-						<div className="columns">Shipping Price</div>
-						<div className="column-1 text-right">
-							£{shippingPrice.toFixed(2)}
-						</div>
-					</div> */}
 					<div className="row">
 						<div className="columns">
 							<strong>Total Price</strong>
@@ -73,12 +67,57 @@ function Basket() {
 					</div>
 					<hr />
 					<div className="row">
-						<button
-							className="checkout-btn"
-							onClick={() => seCheckoutclicked(!checkoutClicked)}>
-							Checkout
-						</button>
-						{checkoutClicked ? <h1>Hello</h1> : ''}
+						{!checkoutClicked && (
+							<button
+								className="checkout-btn"
+								onClick={() => setCheckoutClicked(!checkoutClicked)}>
+								Checkout
+							</button>
+						)}
+						{checkoutClicked ? (
+							<>
+								<div className="checkoutGridWrapper">
+									<div>
+										if you Login/Register you'll get 5% discount on all your
+										orders!
+									</div>
+									<br></br>
+									<div className="wrapperCheckout">
+										{!asGuestClicked && (
+											<>
+												<button
+													onClick={() => setAsGuestClicked(!asGuestClicked)}
+													className="square">
+													Checkout <br></br> as a <br></br> Guest
+												</button>
+												<button
+													onClick={() => history.push('/login')}
+													className="square">
+													Login
+												</button>
+												<button
+													onClick={() => history.push('/signup')}
+													className="square">
+													Register
+												</button>
+											</>
+										)}
+										{asGuestClicked && (
+											<button
+												onClick={() => {
+													history.push('/paymentReceived')
+													removeAllBasketItems()
+												}}
+												className="square">
+												Pay
+											</button>
+										)}
+									</div>
+								</div>
+							</>
+						) : (
+							''
+						)}
 					</div>
 				</>
 			)}
