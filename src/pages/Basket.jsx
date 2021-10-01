@@ -1,14 +1,16 @@
 import React, { useState } from 'react'
 import { useHistory } from 'react-router'
+import { useEffect } from 'react/cjs/react.development'
 import useStore from '../store'
 
 const placeholder = '../public/assets/costa-coffee-logo.svg'
 
-function Basket() {
+function Basket({ authenticatedUser }) {
 	const onAdd = useStore(store => store.addItemBasket)
 	const onRemove = useStore(store => store.removeItemBasket)
 	const basketItems = useStore(store => store.basketItems)
 	const removeAllBasketItems = useStore(store => store.removeAllBasketItems)
+	const getUsersUrl = useStore(store => store.getUsersUrl)
 
 	const totalToPay = useStore(store => store.totalToPay)
 
@@ -25,15 +27,16 @@ function Basket() {
 		0
 	)
 
-	const totalPrice = itemsPrice
+	let totalPrice = itemsPrice
+	if (authenticatedUser) totalPrice = itemsPrice * 0.95
+	totalPrice = totalPrice.toFixed(2)
+	let totalPriceHeading = 'Total Price'
+	if (authenticatedUser) totalPriceHeading = 'Total Price with 5% discount'
 
 	return (
 		<section className="block">
 			<h2>Cart Items</h2>
-			<div>
-				{/* when cart item is 0 render this <div> */}
-				{basketItems.length === 0 && <div>Cart Is Empty</div>}
-			</div>
+			{basketItems.length === 0 && <div>Empty</div>}
 			{basketItems.map(item => (
 				<div key={item.id} className="row">
 					<div className="columns">
@@ -69,17 +72,27 @@ function Basket() {
 					<hr></hr>
 					<div className="row">
 						<div className="columns">
-							<strong>Total Price</strong>
+							<strong>{totalPriceHeading}</strong>
 						</div>
 						<div className="column-1 text-right">
-							<strong>£{totalPrice.toFixed(2)}</strong>
+							<strong>£{totalPrice}</strong>
 						</div>
 					</div>
 					<hr />
 					<div className="row">
-						{!checkoutClicked && (
+						{authenticatedUser && (
 							<button
-								className="checkout-btn"
+								onClick={() => {
+									history.push('/paymentReceived')
+									removeAllBasketItems()
+								}}
+								className="square">
+								Pay
+							</button>
+						)}
+						{!authenticatedUser && !checkoutClicked && (
+							<button
+								className="checkout-btn "
 								onClick={() => setCheckoutClicked(!checkoutClicked)}>
 								Checkout
 							</button>

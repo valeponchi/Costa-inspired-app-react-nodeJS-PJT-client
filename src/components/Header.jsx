@@ -10,7 +10,7 @@ const Title = styled.h1`
 	line-height: 100%;
 `
 
-function Header() {
+function Header({ handleLogout, authenticatedUser }) {
 	const basketItems = useStore(store => store.basketItems)
 
 	const arrayWithQnt = basketItems.map(item => item.qnt)
@@ -51,11 +51,22 @@ function Header() {
 							<Link to="/pastries">Pastries</Link>{' '}
 						</li>
 
-						<li key={6}>
-							<Link className="login_register" to="/login">
-								Login
-							</Link>{' '}
-						</li>
+						{!authenticatedUser && (
+							<li key={6}>
+								<Link className="login_register" to="/login">
+									Login
+								</Link>{' '}
+							</li>
+						)}
+
+						{authenticatedUser && (
+							<li key={6}>
+								<a className="login_register" onClick={handleLogout}>
+									Log Out
+								</a>{' '}
+							</li>
+						)}
+
 						<li key={7}>
 							<Link className="login_register" to="/signup">
 								Register

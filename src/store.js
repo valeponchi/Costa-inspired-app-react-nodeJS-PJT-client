@@ -5,6 +5,14 @@ const basicUrl = 'http://localhost:4000'
 
 const useStore = create(
 	devtools((set, get) => ({
+		//AUTH
+		authenticatedUser: null,
+		setAuthenticatedUser: user => set({ authenticatedUser: user }),
+
+		signinUrl: `${basicUrl}/signup`,
+		loginUrl: `${basicUrl}/login`,
+		getUsersUrl: `${basicUrl}/users`,
+
 		coffees: [],
 		fetchCoffees: () => {
 			fetch(`${basicUrl}/products/coffee`)
@@ -65,13 +73,10 @@ const useStore = create(
 				})
 		},
 
-		// currentUser: null,
-		// login(user) {
-		// 	set({ currentUser: user })
-		// },
-		// logout() {
-		// 	set({ currentUser: null })
-		// },
+		user: { email: '', password: '' },
+		setUser: user => {
+			set({ user })
+		},
 
 		basketItems: [],
 		addItemBasket: newItem => {
@@ -107,25 +112,6 @@ const useStore = create(
 		removeAllBasketItems: () => set({ basketItems: [] }),
 
 		totalToPay: 0,
-		// setTotalToPay: ({
-		// 	totalToPay: get().basketItems.reduce(
-		// 			(accumulator, currentItem) =>
-		// 				accumulator + currentItem.price * currentItem.qnt,
-		// 			0
-		// 		),
-		// })
-		// setTotalToPay: get().basketItems.reduce(
-		// 	(accumulator, currentItem) =>
-		// 		accumulator + currentItem.price * currentItem.qnt,
-		// 	0
-		// ),
-
-		// deleteBasketItem: targetItem =>
-		// 	set(store => ({
-		// 		basketItems: get().basketItems.filter(
-		// 			basketItem => basketItem != targetItem
-		// 		),
-		// 	})),
 	}))
 )
 

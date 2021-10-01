@@ -184,7 +184,7 @@ button.badge {
 	grid-auto-flow: column;
 	gap: 20px;
 
-	justify-content: space-between;
+	/* justify-content: space-between; */
 }
 
 .row.center {
