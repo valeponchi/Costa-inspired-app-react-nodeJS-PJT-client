@@ -52,11 +52,18 @@ function Header({ handleLogout, authenticatedUser }) {
 						</li>
 
 						{!authenticatedUser && (
-							<li key={6}>
-								<Link className="login_register" to="/login">
-									Login
-								</Link>{' '}
-							</li>
+							<>
+								<li key={6}>
+									<Link className="login_register" to="/login">
+										Login
+									</Link>{' '}
+								</li>
+								<li key={7}>
+									<Link className="login_register" to="/signup">
+										Register
+									</Link>{' '}
+								</li>
+							</>
 						)}
 
 						{authenticatedUser && (
@@ -67,11 +74,6 @@ function Header({ handleLogout, authenticatedUser }) {
 							</li>
 						)}
 
-						<li key={7}>
-							<Link className="login_register" to="/signup">
-								Register
-							</Link>{' '}
-						</li>
 						<li key={5}>
 							<Link className="login_register" to="/cart">
 								Cart <button className="badge">{quantityInCart}</button>
