@@ -1,4 +1,4 @@
-![My Image](../src/images/Costa-inspired-react-nodejs-app-homepage.png)
+![My Image](Costa-inspired-react-nodejs-app-homepage.png)
 
 # Getting Started with Create React App
 
