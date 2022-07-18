@@ -1,4 +1,6 @@
-Educational project - done to learn more about React with hooks, NodeJS, Express, Prisma, Postgres, HTML/CSS.
+## __Educational project__
+
+done to learn more about React with hooks, NodeJS, Express, Prisma, Postgres, HTML/CSS.
 
 Using Zustand as React state management: [https://zustand-demo.pmnd.rs/](https://zustand-demo.pmnd.rs/).
 
