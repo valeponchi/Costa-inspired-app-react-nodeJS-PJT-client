@@ -1,3 +1,7 @@
+Educational project - done to learn more about React with hooks, NodeJS, Express, Prisma, Postgres, HTML/CSS.
+Using Zustand as React state management: [https://zustand-demo.pmnd.rs/](https://zustand-demo.pmnd.rs/).
+Netflix inspired (clone).
+
 ![My Image](Costa-inspired-react-nodejs-app-homepage.png)
 
 # Getting Started with Create React App
