@@ -3,9 +3,13 @@ Educational project - done to learn more about React with hooks, NodeJS, Express
 Using Zustand as React state management: [https://zustand-demo.pmnd.rs/](https://zustand-demo.pmnd.rs/).
 
 Costa inspired (clone).
-### Basket page:
+## __Home page:__
 
-![My Image](Costa-inspired-react-nodejs-app-homepage.png)
+![My Image](Costa-inspired-app-homepage.png)
+
+## __Basket page:__
+
+![My Image](Costa-inspired-react-nodejs-app-basket.png)
 
 # Getting Started with Create React App
 
